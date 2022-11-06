@@ -1,0 +1,11 @@
+---
+export interface Props {
+	sectionName: string;
+}
+
+const { sectionName } = Astro.props;
+---
+
+<div class="mt-20 mb-5">
+  <h1 class="text-2xl font-bold border-b-2 border-gruvboxTextColor pb-4 text-gruvboxTextColor">{sectionName}</h1>
+</div>

@@ -1,0 +1,16 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Card from '../components/Card.astro';
+import profilePicture from '../images/profile.jpg'
+import Divider from '../components/Divider.astro';
+---
+
+<Layout title="Uriel's Lair.">
+  <div class="about-me flex flex-col space-y-4 items-center text-gruvboxTextColor">
+    <img class="rounded-full w-64 h-64" src={profilePicture} alt="profile_picture" />
+    <h1 class="text-2xl">Uriel Bravo</h1>
+    <p class="text-lg text-center">I&apos;m an electrical engineer, but I work as a web developer. my current position is as a QA Automation engineer</p>
+  </div>
+
+  <Divider sectionName="Recent projects" />
+</Layout>

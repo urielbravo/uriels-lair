@@ -1,0 +1,11 @@
+---
+export interface Props {
+	content: string,
+  link: string
+}
+
+const { content, link } = Astro.props;
+---
+
+
+<a href={link} class="py-2 5 px-4 flex items-center space-x-2 text-gruvboxTextColor  rounded hover:bg-gruvboxLightBg hover:text-gruvboxHoverTextColor transition duration-100">{content}</a>
