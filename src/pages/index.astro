@@ -1,16 +1,54 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
-import profilePicture from '../images/profile.jpg'
-import Divider from '../components/Divider.astro';
+import Layout from "../layouts/Layout.astro";
+import Card from "../components/Card.astro";
+import profilePicture from "../images/profile.jpg";
+import Divider from "../components/Divider.astro";
+
+// images of the projects
+import medicalAdmin from "../images/portfolio/medical.png";
+import amigaMag from "../images/portfolio/amiga_screen.webp"
 ---
 
 <Layout title="Uriel's Lair.">
-  <div class="about-me flex flex-col space-y-4 items-center text-gruvboxTextColor">
-    <img class="rounded-full w-64 h-64" src={profilePicture} alt="profile_picture" />
+  <!-- profile/introduction -->
+  <div
+    class="about-me flex flex-col space-y-4 items-center text-gruvboxTextColor"
+  >
+    <img
+      class="rounded-full w-64 h-64"
+      src={profilePicture}
+      alt="profile_picture"
+    />
     <h1 class="text-2xl">Uriel Bravo</h1>
-    <p class="text-lg text-center">I&apos;m an electrical engineer, but I work as a web developer. my current position is as a QA Automation engineer</p>
+    <p class="text-lg text-center">
+      I&apos;m an electrical engineer, but I work as a web developer. my current
+      position is as a QA Automation engineer
+    </p>
   </div>
 
   <Divider sectionName="Recent projects" />
+
+  <!-- card projects container -->
+  <div class="w-full flex flex-col items-center space-y-16">
+    <!-- medical admin -->
+    <Card
+      altText="Medical Admin"
+      imageSrc={medicalAdmin}
+      categories={["python", "django", "bootstrap"]}
+      projectTitle="Patients Admin"
+      excerpt="An Admin to register and keep a record of patients"
+      linkType="repo"
+      linkHref="https://github.com/urielbravo/medical_records"
+    />
+    <!-- amiga revista -->
+    <Card
+      altText="Medical Admin"
+      imageSrc={amigaMag}
+      categories={["python", "django", "react-native"]}
+      projectTitle="Amiga Magazine"
+      excerpt="Mobile app for a magazine, the mobile app was made with react native and the cms with django"
+      linkType="store"
+      linkHref="https://play.google.com/store/apps/details?id=com.inpoint.revistabs1&hl=en&gl=US"
+    />
+  </div>
 </Layout>

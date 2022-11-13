@@ -1,62 +1,61 @@
 ---
+import Category from "./Category.astro";
+
+// Icons import
+import githubIcon from '../images/icons/github.svg'
+import googlePlayIcon from '../images/icons/google-play.svg'
+import brokenLinkIcon from '../images/icons/emoji-dizzy.svg'
+
 export interface Props {
-	title: string;
-	body: string;
-	href: string;
+  imageSrc: string;
+  altText: string;
+  categories: string[];
+  projectTitle: string;
+  excerpt: string;
+  linkType: ("repo" | "store" | "broken")
+  linkHref: string
 }
 
-const { href, title, body } = Astro.props;
+const linkIcon = {
+    'repo': githubIcon,
+    'store': googlePlayIcon,
+    'broken': brokenLinkIcon
+  }
+
+const { imageSrc, altText, categories, projectTitle, excerpt, linkType, linkHref } = Astro.props;
 ---
 
-<li class="link-card">
-	<a href={href}>
-		<h2>
-			{title}
-			<span>&rarr;</span>
-		</h2>
-		<p>
-			{body}
-		</p>
-	</a>
-</li>
-<style>
-	.link-card {
-		list-style: none;
-		display: flex;
-		padding: 0.15rem;
-		background-color: white;
-		background-image: var(--accent-gradient);
-		background-size: 400%;
-		border-radius: 0.5rem;
-		background-position: 100%;
-		transition: background-position 0.6s cubic-bezier(0.22, 1, 0.36, 1);
-		box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
-	}
-
-	.link-card > a {
-		width: 100%;
-		text-decoration: none;
-		line-height: 1.4;
-		padding: 1rem 1.3rem;
-		border-radius: 0.35rem;
-		color: #111;
-		background-color: white;
-		opacity: 0.8;
-	}
-	h2 {
-		margin: 0;
-		font-size: 1.25rem;
-		transition: color 0.6s cubic-bezier(0.22, 1, 0.36, 1);
-	}
-	p {
-		margin-top: 0.5rem;
-		margin-bottom: 0;
-		color: #444;
-	}
-	.link-card:is(:hover, :focus-within) {
-		background-position: 0;
-	}
-	.link-card:is(:hover, :focus-within) h2 {
-		color: rgb(var(--accent));
-	}
-</style>
+<div class="w-1/2 bg-gruvboxDarkBg h-80 rounded overflow-hidden flex">
+  <!-- image -->
+  <div class="sm:w-1/2 h-full relative">
+    <img
+      class="absolute inset-0 w-full h-full object-cover"
+      src={imageSrc}
+      alt={altText}
+    />
+  </div>
+  <!-- text/info container -->
+  <div class="sm:w-1/2 p-5 relative">
+    <!-- categories container -->
+    <div class="flex space-x-3">
+      <!-- for every category, return a category component -->
+      {
+        categories.map((category) => {
+          return <Category categoryName={category} />;
+        })
+      }
+    </div>
+    <!-- project title -->
+    <h4 class="text-lg font-semibold text-gruvboxTextColor mt-2">
+      {projectTitle}
+    </h4>
+    <!-- project excerpt -->
+    <p class="mt-2 text-gruvboxTextColor">{excerpt}</p>
+    <!-- project links -->
+    <div class="bottom-5 left-5 right-5 absolute text-gruvboxTextColor flex justify-around items-center w-auto">
+      <span>Link:</span>
+      <!-- showing different icon based on the string that is passed -->
+      <a href={linkHref}><img class="w-10 h-10" src={linkIcon[linkType]} alt="Link to Project"></a>
+    </div>
+  </div>
+</div>

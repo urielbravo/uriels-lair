@@ -1,0 +1,13 @@
+---
+export interface Props {
+  categoryName: string;
+}
+
+const { categoryName } = Astro.props;
+---
+
+<span
+  class="uppercase tracking-wide inline-block px-2 rounded-full text-xs bg-gruvboxTextColor text-gruvboxDarkBg"
+>
+  { categoryName }
+</span>
