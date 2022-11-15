@@ -1,5 +1,9 @@
 ---
 import Navigation from "./Navigation.astro";
+
+import githubIcon from "../images/icons/github.svg"
+import linkedInIcon from "../images/icons/linkedin.svg"
+import resumeIcon from "../images/icons/resume.svg"
 ---
 
 <!-- sidebar -->
@@ -9,6 +13,17 @@ import Navigation from "./Navigation.astro";
     <span>Uriel's</span>
     <span class="mb-3">Lair</span>
     <span class="text-base mb-5">An average programmer</span>
+    <div class="flex mb-5 space-x-5">
+      <a href="https://github.com/urielbravo">
+        <img class="w-7 h-7" src={githubIcon} alt="github repo">
+      </a>
+      <a href="https://www.linkedin.com/in/urielbravo/">
+        <img class="w-7 h-7" src={linkedInIcon} alt="Linked In">
+      </a>
+      <a href="https://www.linkedin.com/in/urielbravo/">
+        <img class="w-7 h-7" src={resumeIcon} alt="Resume">
+      </a>
+    </div>
   </div>
 
 
