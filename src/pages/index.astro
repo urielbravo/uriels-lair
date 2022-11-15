@@ -7,6 +7,8 @@ import Divider from "../components/Divider.astro";
 // images of the projects
 import medicalAdmin from "../images/portfolio/medical.png";
 import amigaMag from "../images/portfolio/amiga_screen.webp"
+import bsMagazine from "../images/portfolio/bs_revista.webp"
+import ubigas from "../images/portfolio/ubigas.jpg"
 ---
 
 <Layout title="Uriel's Lair.">
@@ -42,13 +44,33 @@ import amigaMag from "../images/portfolio/amiga_screen.webp"
     />
     <!-- amiga revista -->
     <Card
-      altText="Medical Admin"
+      altText="AMiga magazine"
       imageSrc={amigaMag}
       categories={["python", "django", "react-native"]}
       projectTitle="Amiga Magazine"
-      excerpt="Mobile app for a magazine, the mobile app was made with react native and the cms with django"
+      excerpt="Mobile app for a magazine, the mobile app was made with react native and the CMS with django"
       linkType="store"
-      linkHref="https://play.google.com/store/apps/details?id=com.inpoint.revistabs1&hl=en&gl=US"
+      linkHref="https://play.google.com/store/apps/details?id=com.inpoint.revistabs1"
+    />
+    <!-- Buena salud revista -->
+    <Card
+      altText="BS magazine"
+      imageSrc={bsMagazine}
+      categories={["python", "django", "Ionic Framework"]}
+      projectTitle="BS Magazine"
+      excerpt="Mobile app for a magazine, the mobile app was made with Ionic Framework and the CMS with django"
+      linkType="store"
+      linkHref="https://play.google.com/store/apps/details?id=com.inpoint.buenasalud2"
+    />
+    <!-- Ubigas -->
+    <Card
+      altText="Ubigas"
+      imageSrc={ubigas}
+      categories={["python", "django", "React Native"]}
+      projectTitle="Ubigas"
+      excerpt="Mobile app that shows you the location of all the gas stations close to you and their prices, the mobile app was made with React native and the CMS with django"
+      linkType="broken"
+      linkHref="#"
     />
   </div>
 </Layout>
