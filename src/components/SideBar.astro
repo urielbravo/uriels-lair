@@ -4,6 +4,8 @@ import Navigation from "./Navigation.astro";
 import githubIcon from "../images/icons/github.svg"
 import linkedInIcon from "../images/icons/linkedin.svg"
 import resumeIcon from "../images/icons/resume.svg"
+
+import resumeFile from "/resume.pdf"
 ---
 
 <!-- sidebar -->
@@ -20,7 +22,7 @@ import resumeIcon from "../images/icons/resume.svg"
       <a href="https://www.linkedin.com/in/urielbravo/">
         <img class="w-7 h-7" src={linkedInIcon} alt="Linked In">
       </a>
-      <a href="https://www.linkedin.com/in/urielbravo/">
+      <a href={resumeFile}>
         <img class="w-7 h-7" src={resumeIcon} alt="Resume">
       </a>
     </div>

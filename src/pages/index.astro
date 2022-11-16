@@ -9,12 +9,13 @@ import medicalAdmin from "../images/portfolio/medical.png";
 import amigaMag from "../images/portfolio/amiga_screen.webp"
 import bsMagazine from "../images/portfolio/bs_revista.webp"
 import ubigas from "../images/portfolio/ubigas.jpg"
+import lair from "../images/portfolio/lair.png"
 ---
 
 <Layout title="Uriel's Lair.">
   <!-- profile/introduction -->
   <div
-    class="about-me flex flex-col space-y-4 items-center text-gruvboxTextColor"
+    class="flex flex-col space-y-4 items-center text-gruvboxTextColor"
   >
     <img
       class="rounded-full w-64 h-64"
@@ -32,6 +33,16 @@ import ubigas from "../images/portfolio/ubigas.jpg"
 
   <!-- card projects container -->
   <div class="w-full flex flex-col items-center space-y-16">
+    <!-- Uriel's Lair -->
+    <Card
+      altText="Uriel's Lair"
+      imageSrc={lair}
+      categories={["typescript", "astro", "TailwindCSS"]}
+      projectTitle="Uriel's Lair"
+      excerpt="A portfolio/blog for myself"
+      linkType="repo"
+      linkHref="https://github.com/urielbravo/medical_records"
+    />
     <!-- medical admin -->
     <Card
       altText="Medical Admin"

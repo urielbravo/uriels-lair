@@ -1,7 +1,59 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
+import Divider from "../components/Divider.astro";
+
+import kitoChristmas from "../images/friend/kito_christmas.jpeg";
+import kitoTired from "../images/friend/kit_tired.jpg";
 ---
 
 <Layout title="Uriel's Lair.">
-  <h1>This is the about</h1>
+  <div
+    class="w-full flex flex-col items-center space-y-10 text-gruvboxTextColor"
+  >
+    <h1 class="text-2xl">Hello, My name is Uriel and this is my webpage!</h1>
+    <span class="text-lg"
+      >I do web development professionally, but here is some other things about
+      me:</span
+    >
+  </div>
+
+  <Divider sectionName="Hobbies" />
+  <div
+    class="w-full flex flex-col items-center space-y-10 text-gruvboxTextColor"
+  >
+    <ul class="list-disc text-gruvboxTextColor text-lg">
+      <li>Football (soccer)</li>
+      <li>Play videogames (mostly RPG's, Horror and Point&Click)</li>
+      <li>I'm a huge fan of horror movies</li>
+    </ul>
+  </div>
+
+  <Divider sectionName="My friend" />
+  <div
+    class="w-full flex flex-col items-center text-lg space-y-10 text-gruvboxTextColor"
+  >
+    <span>This is my friend Kito (ketoh), we hang out and have fun</span>
+    <img class="w-72 h-96" src={kitoChristmas} alt="kito_christmas" />
+    <span>This is him after our run, he was a bit tired</span>
+    <img class="w-96 h-72" src={kitoTired} alt="kito_tired" />
+  </div>
+
+  <Divider sectionName="My youtube channel" />
+  <div
+    class="w-full flex flex-col items-center text-lg space-y-10 text-gruvboxTextColor"
+  >
+    <span
+      >Oh yeah, I have a youtube channel "Cuentos de la Noche" (Tales from the
+      night), I narrate Horror stories that I found in the internet. Take a look
+      (The channel is in spanish though)
+    </span>
+    <iframe
+      width="560"
+      height="315"
+      src="https://www.youtube.com/embed/fdyfWpSErc8"
+      title="YouTube video player"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen></iframe>
+  </div>
 </Layout>
