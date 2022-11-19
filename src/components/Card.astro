@@ -25,9 +25,9 @@ const linkIcon = {
 const { imageSrc, altText, categories, projectTitle, excerpt, linkType, linkHref } = Astro.props;
 ---
 
-<div class="w-1/2 bg-gruvboxDarkBg h-80 rounded overflow-hidden flex">
+<div class="w-full md:w-2/3 xl:w-1/2 bg-gruvboxDarkBg h-[33rem] xl:h-80 rounded overflow-hidden flex xl:flex-row flex-col shadow-md shadow-gruvboxDarkBg">
   <!-- image -->
-  <div class="sm:w-1/2 h-full relative">
+  <div class="w-full xl:w-1/2 h-full relative">
     <img
       class="absolute inset-0 w-full h-full object-cover"
       src={imageSrc}
