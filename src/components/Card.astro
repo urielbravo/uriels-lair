@@ -24,7 +24,7 @@ const linkIcon = {
 
 const { imageSrc, altText, categories, projectTitle, excerpt, linkType, linkHref } = Astro.props;
 ---
-
+<!-- card -->
 <div class="w-full md:w-2/3 xl:w-1/2 bg-gruvboxDarkBg h-[33rem] xl:h-80 rounded overflow-hidden flex xl:flex-row flex-col shadow-md shadow-gruvboxDarkBg">
   <!-- image -->
   <div class="w-full xl:w-1/2 h-full relative">
@@ -35,7 +35,7 @@ const { imageSrc, altText, categories, projectTitle, excerpt, linkType, linkHref
     />
   </div>
   <!-- text/info container -->
-  <div class="sm:w-1/2 p-5 relative">
+  <div class="h-screen sm:w-1/2 p-5 relative">
     <!-- categories container -->
     <div class="flex flex-wrap space-x-3">
       <!-- for every category, return a category component -->
@@ -46,11 +46,15 @@ const { imageSrc, altText, categories, projectTitle, excerpt, linkType, linkHref
       }
     </div>
     <!-- project title -->
-    <h4 class="text-lg font-semibold text-gruvboxTextColor mt-2">
-      {projectTitle}
-    </h4>
+    <div>
+      <h4 class="text-lg font-semibold text-gruvboxTextColor mt-2">
+        {projectTitle}
+      </h4>
+    </div>
     <!-- project excerpt -->
-    <p class="mt-2 text-gruvboxTextColor">{excerpt}</p>
+     <div>
+      <p class="mt-2 text-gruvboxTextColor">{excerpt}</p>
+     </div>
     <!-- project links -->
     <div class="bottom-5 left-5 right-5 absolute text-gruvboxTextColor flex justify-around items-center w-auto">
       <span>Link:</span>
